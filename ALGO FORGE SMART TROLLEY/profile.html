@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #563d7c;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .sidebar img:hover {
+      transform: scale(1.1);
+    }
+
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      text-align: center;
+    }
+
+    .sidebar h2 span {
+      font-size: 1rem;
+      font-style: italic;
+      color: #ffcc80;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+    }
+
+    .sidebar ul li {
+      width: 100%;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      display: block;
+      font-size: 1rem;
+      transition: background 0.3s, padding-left 0.3s;
+    }
+
+    .sidebar ul li a:hover, .sidebar ul li a.active {
+      background-color: #ff6a00;
+      padding-left: 2rem;
+      font-weight: bold;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      background-color: #fff;
+      overflow-y: auto;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .main-content h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #563d7c;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+    }
+
+    .main-content h1::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #ff6a00;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 0.9rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      border-color: #ff6a00;
+      outline: none;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button-group button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button-group .discard-btn {
+      background-color: #f8f9fa;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+
+    .button-group .discard-btn:hover {
+      background-color: #e9ecef;
+    }
+
+    .button-group .save-btn {
+      background-color: #ff6a00;
+      color: white;
+    }
+
+    .button-group .save-btn:hover {
+      background-color: #e65a00;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+    <h2><span>Hello,</span> User</h2>
+    <ul>
+      <li><a href="profile.html" class="active">Personal Information</a></li>
+      <li><a href="login&pass.html">Login & Password</a></li>
+      <li><a href="payment.html">Payment Details</a></li>
+      <li><a href="refund.html">Refund Status</a></li>
+      <li><a href="payment-history.html" >Payment History</a></li>
+      <li><a href="login.html">Log Out</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <h1>Personal Information</h1>
+    <form>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="Address">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Phone Number">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob">
+      </div>
+      <div class="button-group">
+        <button type="button" class="discard-btn">Discard Changes</button>
+        <button type="submit" class="save-btn">Save Changes</button>
+      </div>
+    </form>
+  </div>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script src="sss.js"></script>
+</body>
+</html>
