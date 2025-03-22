@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('loginbackground.jpg'); /* Replace with your image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end; /* Align content to the right */
+      align-items: center;
+    }
+
+    /* Login Form Container */
+    .login-form-container {
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Blur effect for the background */
+      border-radius: 15px;
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      margin-right: 150px; /* Add spacing from the right */
+    }
+
+    /* Form Heading */
+    .login-form-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    /* Labels and Inputs */
+    .login-form-container label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .login-form-container input[type="email"],
+    .login-form-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .login-form-container input[type="email"]::placeholder,
+    .login-form-container input[type="password"]::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Buttons */
+    .login-form-container button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: blue;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-form-container button:hover {
+      background-color: darkblue;
+    }
+
+    /* Additional Links */
+    .login-form-container .actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .login-form-container .actions a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .login-form-container .actions a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-form-container">
+    <h1>Login</h1>
+    <form action="home.html" method="POST">
+      <!-- Email Input -->
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <!-- Password Input -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <!-- Login Button -->
+      <button type="submit">Login</button>
+
+      <!-- Additional Links -->
+      <div class="actions">
+        <a href="newuser.html" id="newuser">New User?</a>
+        <a href="forgotpassword.html" id="forgotpassword">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="sss.js"></script>
+</body>
+</html>

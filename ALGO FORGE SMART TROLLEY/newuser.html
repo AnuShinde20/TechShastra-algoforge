@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New User Registration</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('loginbackground.jpg'); /* Replace with your image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end; /* Align content to the right */
+      align-items: center;
+      overflow-y: auto; /* Enable scrolling */
+    }
+
+    /* Registration Form Container */
+    .registration-form-container {
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Blur effect for the background */
+      border-radius: 15px;
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      margin-right: 150px; /* Add spacing from the right */
+      max-height: 80vh; /* Limit the height of the box */
+      overflow-y: auto; /* Allow vertical scrolling inside the form */
+    }
+
+    /* Form Heading */
+    .registration-form-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    /* Labels and Inputs */
+    .registration-form-container label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .registration-form-container input[type="text"],
+    .registration-form-container input[type="email"],
+    .registration-form-container input[type="phone"],
+    .registration-form-container input[type="password"],
+    .registration-form-container input[type="date"],
+    .registration-form-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .registration-form-container input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Buttons */
+    .registration-form-container button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: blue;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .registration-form-container button:hover {
+      background-color: darkblue;
+    }
+
+    /* Additional Links */
+    .registration-form-container .actions {
+      text-align: center;
+    }
+
+    .registration-form-container .actions a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .registration-form-container .actions a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="registration-form-container">
+    <h1>New User Registration</h1>
+    <form id="signup-form" method="POST">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="phone" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <button type="submit">Register</button>
+
+      <div class="actions">
+        <a href="index.html">Already have an account? Login</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script>
+    // Clear form fields when page loads (if any data is auto-filled by the browser)
+    window.onload = function() {
+      document.getElementById("signup-form").reset(); // This ensures the form is reset and empty
+    };
+  </script>
+
+  <script src="sss.js"></script>
+</body>
+</html>
